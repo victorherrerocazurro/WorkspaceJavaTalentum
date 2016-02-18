@@ -32,7 +32,7 @@ public class MemoriaClienteDao implements ClienteDao {
 	}
 	
 	public Collection<Cliente> consultaTodos(){
-		
+		return null;
 	}
 
 	

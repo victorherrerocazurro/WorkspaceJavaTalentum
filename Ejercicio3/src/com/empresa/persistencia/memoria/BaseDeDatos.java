@@ -28,7 +28,7 @@ public class BaseDeDatos {
 		cliente.setId(valorDeLaClaveDeClientes);
 		//Asociamos en nuevo ID al indice de busqueda, a parte de
 		//insertar el registro en la tabla
-		tablaClientes.put(valorDeLaClaveDeClientes, cliente);
+		tablaClientes.put(cliente.getId(), cliente);
 		//Incrementamos el contador de la PK
 		valorDeLaClaveDeClientes++;
 		return cliente.getId();

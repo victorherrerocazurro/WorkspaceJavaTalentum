@@ -18,12 +18,12 @@ import com.busqueda.pareja.utilidades.Tabla;
 
 public class TestMemoriaUsuarioDao {
 
-	private MemoriaUsuarioDao sut;
+	protected MemoriaUsuarioDao sut;
 	
 	//El señor que estabamos esperando que nos crease los objetos
 	public TestMemoriaUsuarioDao() {
 		BaseDeDatosEnMemoria bd = new BaseDeDatosEnMemoria();
-		bd.crearTabla(Tabla.USUARIO);
+		//bd.crearTabla(Tabla.USUARIO);
 		sut = new MemoriaUsuarioDao(bd);
 	}
 	

@@ -9,14 +9,14 @@ public interface LibroDao {
 
 	void alta(Libro libro) throws SQLException;
 	
-	void bajaPorIsbn(int isbn);
+	void bajaPorIsbn(int isbn) throws SQLException;
 	
-	void modifica(Libro libro);
+	void modifica(Libro libro) throws SQLException;
 	
-	Libro consultaPorIsbn(int isbn);
+	Libro consultaPorIsbn(int isbn) throws SQLException;
 	
-	Collection<Libro> consultaTodos();
+	Collection<Libro> consultaTodos() throws SQLException;
 	
-	Collection<Libro> consultaPorAutor(String autor);
+	Collection<Libro> consultaPorAutor(String autor) throws SQLException;
 	
 }

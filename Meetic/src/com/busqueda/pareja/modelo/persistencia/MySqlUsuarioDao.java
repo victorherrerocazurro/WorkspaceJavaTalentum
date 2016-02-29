@@ -52,7 +52,6 @@ public class MySqlUsuarioDao implements UsuarioDao {
 				connection.close();
 			}
 		}
-		return 0;
 	}
 
 	@Override

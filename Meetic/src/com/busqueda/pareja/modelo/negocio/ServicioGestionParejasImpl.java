@@ -1,5 +1,6 @@
 package com.busqueda.pareja.modelo.negocio;
 
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -17,7 +18,12 @@ public class ServicioGestionParejasImpl implements ServicioGestionParejas {
 
 	@Override
 	public void registroDeUsuarioEnLaAplicacion(Usuario usuario) {
-		int alta = usuarioDao.alta(usuario);
+		try {
+			int alta = usuarioDao.alta(usuario);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//TODO recordar esto cuando veamos JDBC
 	}

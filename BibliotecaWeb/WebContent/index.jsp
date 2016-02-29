@@ -10,13 +10,13 @@
 <body>
 
 <%
-	String url = "gestionLibro?" 
-			+ GestionLibrosControlador.ACCION 
-			+ "=" 
-			+ GestionLibrosControlador.COMANDO_CONSULTA;
+	String url = "gestionLibro?accion=consulta";
+
+	String urlModificar = "gestionLibro?accion=modificar";
 %>
 
 	<a href="alta.jsp">Alta</a>
 	<a href="<%=url%>">Consulta</a>
+	<a href="<%=urlModificar%>">Modificar</a>
 </body>
 </html>

@@ -57,7 +57,8 @@ public class Lanzador {
 	 * @return
 	 * @throws ParseGeneroException
 	 */
-	private static Genero parsearStringAGenero(String genero) throws ParseGeneroException {
+	private static Genero parsearStringAGenero(String genero) 
+			throws ParseGeneroException {
 		if(genero.equals("M")
 				|| genero.equals("Masculino") 
 				|| genero.equals("Masc")){

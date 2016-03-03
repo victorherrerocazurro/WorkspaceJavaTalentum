@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Saludador
  */
-@WebServlet("/Hola.html")
+//@WebServlet(values={"/Hola.html","/adios.html"})
 public class Saludador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

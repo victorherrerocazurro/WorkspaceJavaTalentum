@@ -2,6 +2,8 @@ package com.telefonica.talentum.holamundo.controlador;
 
 import java.io.IOException;
 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 import javax.portlet.GenericPortlet;
 import javax.portlet.PortletException;
 import javax.portlet.PortletRequestDispatcher;
@@ -33,14 +35,17 @@ public class HolaMundoPortlet extends GenericPortlet {
 	@Override
     public void init() {
         viewTemplate = getInitParameter("view-template");
+        viewTemplate = "/html/holamundo/view.jsp";
     }
 	
 	
-
+	//RenderMode View
     public void doView(
             RenderRequest renderRequest, RenderResponse renderResponse)
         throws IOException, PortletException {
 
+    	// TODO me falta saber cuando decirle al include que view tiene que pintar
+    	
         include(viewTemplate, renderRequest, renderResponse);
     }
 
@@ -58,10 +63,29 @@ public class HolaMundoPortlet extends GenericPortlet {
         else {
             portletRequestDispatcher.include(renderRequest, renderResponse);
         }
+ 
     }
  
+    @Override
+    public void processAction(ActionRequest request, ActionResponse response) throws PortletException, IOException {
+    	//super.processAction(request, response);
+    	
+    	//Recoger los prametros que me envia el cliente
+    	
+    	//Invocar el negocio
+    	
+    	//feedback
+    	String mensaje = "Has llegado correctamente al Action!!!!!";
+    	
+    	//Hago accesible el feedback a la vista
+    	request.setAttribute("mensaje", mensaje);
+    	
+    }
+    
     protected String viewTemplate;
 
     private static Log _log = LogFactoryUtil.getLog(HolaMundoPortlet.class);
 
+    
+    
 }

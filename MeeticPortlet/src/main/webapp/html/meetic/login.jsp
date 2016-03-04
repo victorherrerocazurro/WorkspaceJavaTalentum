@@ -2,5 +2,4 @@
 
 <portlet:defineObjects />
 
-<a href="/login.jsp">Login</a>
-<a href="/alta.jsp">Alta</a>
+Formulario Login

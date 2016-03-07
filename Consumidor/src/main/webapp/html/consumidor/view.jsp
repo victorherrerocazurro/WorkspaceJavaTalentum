@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-Formulario Login
+<%=request.getAttribute("mensaje") %>

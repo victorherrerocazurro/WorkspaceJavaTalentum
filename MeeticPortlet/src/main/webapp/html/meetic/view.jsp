@@ -2,9 +2,13 @@
 
 <portlet:defineObjects />
 
-<portlet:renderURL portletMode="VIEW" var="urlFormularioAlta"/>
+<portlet:renderURL portletMode="view" var="urlFormularioAlta">
+	<portlet:param name="vista_a_la_que_quiero_ir" value="alta"/>
+</portlet:renderURL>
 
-<portlet:renderURL portletMode="VIEW" var="urlFormularioLogin"/>
+<portlet:renderURL portletMode="view" var="urlFormularioLogin">
+	<portlet:param name="vista_a_la_que_quiero_ir" value="login"/>
+</portlet:renderURL>
 
 <a href="<%= urlFormularioAlta%>">Alta</a>
 <a href="<%= urlFormularioLogin%>">Login</a>

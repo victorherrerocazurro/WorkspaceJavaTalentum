@@ -3,41 +3,31 @@
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	
 	<portlet>
-		<portlet-name>meetic</portlet-name>
-		<display-name>Meetic</display-name>
-		<portlet-class>com.meetic.MeeticPortlet</portlet-class>
+		<portlet-name>el-tiempo</portlet-name>
+		<display-name>El Tiempo</display-name>
+		<portlet-class>
+			com.ejemplo.eltiempo.ElTiempoPortlet
+		</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/meetic/view.jsp</value>
+			<value>/html/eltiempo/view.jsp</value>
 		</init-param>
 		<init-param>
-			<name>alta-template</name>
-			<value>/html/meetic/alta.jsp</value>
-		</init-param>
-		<init-param>
-			<name>login-template</name>
-			<value>/html/meetic/login.jsp</value>
-		</init-param>
-		<init-param>
-			<name>menu-template</name>
-			<value>/html/meetic/menu.jsp</value>
-		</init-param>
-		<init-param>
-			<name>afines-template</name>
-			<value>/html/meetic/afines.jsp</value>
-		</init-param>
-		<init-param>
-			<name>ideal-template</name>
-			<value>/html/meetic/ideal.jsp</value>
+			<name>edit-template</name>
+			<value>/html/eltiempo/edit.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
 		</supports>
+        <supported-locale>es</supported-locale>
+        <supported-locale>en</supported-locale>
+        <resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
-			<title>Meetic</title>
-			<short-title>Meetic</short-title>
+			<title>El Tiempo</title>
+			<short-title>El Tiempo</short-title>
 			<keywords></keywords>
 		</portlet-info>
 		<security-role-ref>

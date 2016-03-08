@@ -17,24 +17,18 @@ public class ServicioGestionParejasImpl implements ServicioGestionParejas {
 	}
 
 	@Override
-	public void registroDeUsuarioEnLaAplicacion(Usuario usuario) {
-		try {
-			int alta = usuarioDao.alta(usuario);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//TODO recordar esto cuando veamos JDBC
+	public void registroDeUsuarioEnLaAplicacion(Usuario usuario) throws SQLException {
+		int idGenerado = usuarioDao.alta(usuario);
+		usuario.setId(idGenerado);
 	}
 
 	@Override
-	public void bajaDeUsuarioEnLaAplicacion(int loguin) {
+	public void bajaDeUsuarioEnLaAplicacion(int loguin) throws SQLException {
 		usuarioDao.baja(loguin);
 	}
 
 	@Override
-	public Collection<Usuario> buscarAfines(int loguin) {
+	public Collection<Usuario> buscarAfines(int loguin) throws SQLException {
 
 		Collection<Usuario> afines = new HashSet<>();
 		
@@ -52,7 +46,7 @@ public class ServicioGestionParejasImpl implements ServicioGestionParejas {
 	}
 
 	@Override
-	public Usuario buscarIdeal(int loguin) {
+	public Usuario buscarIdeal(int loguin) throws SQLException {
 
 		Usuario elQueBusca = usuarioDao.consulta(loguin);
 		Collection<Usuario> candidatosConElQuebuscaIncluido 
@@ -66,5 +60,23 @@ public class ServicioGestionParejasImpl implements ServicioGestionParejas {
 		}
 		
 		return null;
+	}
+
+	/**
+	 * Metodo que recibiendo el identificador de un usuario, retornara
+	 * el Usuario si encuentra un usuario en la base de datos con ese id y
+	 * lanza una excepcion si no encuentra un usuario con ese id
+	 */
+	@Override
+	public Usuario login(int id) throws Exception {
+		Usuario usuario = usuarioDao.consulta(id);
+		
+		if(usuario != null){
+			return usuario;
+		} else {
+			throw new Exception("El login es incorrecto");
+		}
+		
+		
 	}
 }

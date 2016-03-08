@@ -8,8 +8,8 @@ import com.busqueda.pareja.modelo.entidades.Usuario;
 public interface UsuarioDao {
 	
 	int alta(Usuario usuario) throws SQLException;
-	void baja(int id);
-	Collection<Usuario> consulta();
-	Usuario consulta(int id);
+	void baja(int id) throws SQLException;
+	Collection<Usuario> consulta() throws SQLException;
+	Usuario consulta(int id) throws SQLException;
 	
 }

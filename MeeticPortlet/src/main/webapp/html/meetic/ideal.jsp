@@ -13,7 +13,7 @@ if(usuario != null){
 	Tu usuario ideal es: <%= usuario.getNombre()%>
 
 <%
-} else {
+} else { 
 %>
 	No tienes ideal!!!!
 <%

@@ -1,0 +1,36 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.example.plugins">
+	<namespace>BibliotecaServiceBuilder</namespace>
+	<entity name="Libro" local-service="true" table="Libros"
+		trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="isbn" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        
+        <!--  Mis Campos -->
+        
+        <column name="autor" type="String"></column>
+        <column name="titulo" type="String"></column>
+        <column name="numeroPaginas" type="int"></column>
+        <order by="asc">
+            <order-column name="titulo" order-by="asc"></order-column>
+        </order>
+        <finder name="titulo" return-type="Collection">
+            <finder-column name="titulo"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

@@ -1,0 +1,1 @@
+create index IX_FD3B4AC4 on Libros (titulo);

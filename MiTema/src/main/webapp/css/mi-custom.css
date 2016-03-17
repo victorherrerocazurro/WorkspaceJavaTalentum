@@ -1,0 +1,9 @@
+.aui .dockbar-split .dockbar .navbar-inner .nav-account-controls {
+	right: 0em;
+	bottom: 0em;
+}
+
+.aui .dropdown-menu {
+	bottom: 100%;
+	top: inherit;
+}

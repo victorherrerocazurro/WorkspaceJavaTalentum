@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.meetic.service.UsuarioMeeticLocalService" class="com.meetic.service.impl.UsuarioMeeticLocalServiceImpl" />
+	<bean id="com.meetic.service.UsuarioMeeticService" class="com.meetic.service.impl.UsuarioMeeticServiceImpl" />
+	<bean id="com.meetic.service.persistence.UsuarioMeeticPersistence" class="com.meetic.service.persistence.UsuarioMeeticPersistenceImpl" parent="basePersistence" />
+</beans>
